@@ -4,7 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const compression = require("compression");
-const hemlet = require("helmet");
+const helmet = require("helmet");
+const mongoose = require("mongoose");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -13,7 +14,6 @@ const catalogRouter = require('./routes/catalog')
 const app = express();
 
 // Set up mongoose connection
-const mongoose = require("mongoose");
 const dev_db_url = "mongodb+srv://christutorial:OrOW5YTHKjtRM3NK@cluster0.uw3jqpl.mongodb.net/local_library?retryWrites=true&w=majority";
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
