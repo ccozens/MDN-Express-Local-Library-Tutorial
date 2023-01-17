@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 #{title}: #{bookinstance.title}
+  h3  #[strong Copy: ]
+    #{bookinstance._id}
+
+  p #[strong Do you really want to delete this copy?]
+    
+    form(method='POST' action='')
+      div.form-group
+        input#bookinstance.form-control(type='hidden',name='bookid', required='true', value=bookinstance.id )
+
+      button.btn.btn-primary(type='submit') Delete

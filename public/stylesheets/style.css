@@ -1,0 +1,16 @@
+body {
+  padding: 50px;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: hsl(36, 100%, 84%);
+}
+
+a {
+  color: hsl(240, 100%, 40%);
+}
+
+
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
