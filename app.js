@@ -7,14 +7,15 @@ const compression = require("compression");
 const helmet = require("helmet");
 const mongoose = require("mongoose");
 
+
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const catalogRouter = require('./routes/catalog')
+const catalogRouter = require('./routes/catalog');
 
 const app = express();
 
 // Set up mongoose connection
-const dev_db_url = "mongodb+srv://christutorial:OrOW5YTHKjtRM3NK@cluster0.uw3jqpl.mongodb.net/local_library?retryWrites=true&w=majority";
+const dev_db_url = process.env.dev_db_url;
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
